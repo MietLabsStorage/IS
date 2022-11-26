@@ -33,6 +33,7 @@ load('ex3data1.mat');
 
 % Отображение тренировочного набора данных
 plotData(X, y);
+title('Training (first) data set')
 
 fprintf('Пауза в выполнении программы. Нажмите любую клавишу для продолжения.\n');
 pause;
@@ -54,6 +55,7 @@ fprintf('\nОбучения линейного SVM ...\n')
 C = 1000;
 model = svmTrain(X, y, C, @linearKernel, 1e-3, 20);
 visualizeBoundaryLinear(X, y, model);
+title(strcat('Training (first) data set with boundary C=', num2str(C)))
 
 fprintf('Пауза в выполнении программы. Нажмите любую клавишу для продолжения.\n');
 pause;
@@ -85,6 +87,7 @@ load('ex3data2.mat');
 
 % Визуализация набора обучающих данных
 plotData(X, y);
+title('Second learning data set')
 
 fprintf('Пауза в выполнении программы. Нажмите любую клавишу для продолжения.\n');
 pause;
@@ -103,6 +106,7 @@ C = 1; sigma = 0.1;
 
 model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma)); 
 visualizeBoundary(X, y, model);
+title('Second data set with boundary')
 
 fprintf('Пауза в выполнении программы. Нажмите любую клавишу для продолжения.\n');
 pause;
@@ -118,6 +122,7 @@ load('ex3data3.mat');
 
 % Визуализация набора обучающих данных
 plotData(X, y);
+title('Third learning data set')
 
 fprintf('Пауза в выполнении программы. Нажмите любую клавишу для продолжения.\n');
 pause;
@@ -138,6 +143,7 @@ load('ex3data3.mat');
 % Обучение SVM-классификатора с оптимальными параметрами
 model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma));
 visualizeBoundary(X, y, model);
+title('Third learning data set with boundary')
 
 fprintf('Пауза в выполнении программы. Нажмите любую клавишу для продолжения.\n');
 pause;
